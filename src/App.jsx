@@ -10,12 +10,16 @@ function App() {
     { id: 2, text: "Прочитать книгу", tags: ["личное"] }
   ])
 
+  const addNote = (note) => {
+    setNotes([note, ...notes])
+  }
+
   return (
     <div>
       <h1>Notes App</h1>
       <Header/>
       <NotesList notes={notes} />
-      <NoteForm/>
+      <NoteForm onAddNote={addNote}/>
     </div>
   )
 }
