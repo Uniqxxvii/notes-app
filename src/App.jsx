@@ -2,13 +2,13 @@ import Header from "./components/Header"
 import NotesList from "./components/NotesList"
 import Note from "./components/Note"
 import NoteForm from "./components/NoteForm"
-
+import { useState } from "react"
 
 function App() {
-  const notes = [
+  const [notes, setNotes] = useState([
     { id: 1, text: "Купить молоко", tags: ["покупки", "еда"] },
     { id: 2, text: "Прочитать книгу", tags: ["личное"] }
-  ]
+  ])
 
   return (
     <div>
