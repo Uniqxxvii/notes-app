@@ -1,6 +1,6 @@
 import Note from "./Note"
 
-function NotesList({ notes, onDelete }) {
+function NotesList({ notes, onDelete, onEdit }) {
     return (
         <div>
             NotesList
@@ -11,6 +11,7 @@ function NotesList({ notes, onDelete }) {
                     text={note.text} 
                     tags={note.tags}
                     onDelete={onDelete} 
+                    onEdit={() => onEdit(note)}
                 />
             ))}
         </div>

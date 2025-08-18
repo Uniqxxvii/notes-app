@@ -1,20 +1,31 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
-function NoteForm({ onAddNote }) {
+function NoteForm({ onAddNote, onUpdateNote, editingNote }) {
     const [text, setText] = useState("")
     const [tags, setTags] = useState("")
+
+    useEffect(() => {
+        if (editingNote) {
+            setText(editingNote.text)
+            setTags(editingNote.tags.join(", "))
+        }
+    }, [editingNote])
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (!text.trim()) return 
 
-        const newNote = {
-            id: Date.now(),
+        const noteData = {
+            id: editingNote ? editingNote.id : Date.now(),
             text,
             tags: tags.split(",").map(tag => tag.trim()).filter(Boolean)
         }
 
-        onAddNote(newNote)
+        if (editingNote) { 
+            onUpdateNote(noteData)
+        } else {
+            onAddNote(noteData)
+        }
 
         setText("")
         setTags("")
@@ -34,7 +45,9 @@ function NoteForm({ onAddNote }) {
                 value={tags}
                 onChange={(e) => setTags(e.target.value)} 
             />
-            <button type="submit">Добавить</button>
+            <button type="submit">
+                {editingNote ? "Сохранить" : "Добавить"}
+            </button>
         </form>
     )
 }
