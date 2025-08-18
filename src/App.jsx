@@ -5,11 +5,15 @@ import NoteForm from "./components/NoteForm"
 import { useState } from "react"
 
 function App() {
-  const [notes, setNotes] = useState([
-    { id: 1, text: "Купить молоко", tags: ["покупки", "еда"] },
-    { id: 2, text: "Прочитать книгу", tags: ["личное"] }
-  ])
+  const [notes, setNotes] = useState(() => {
+    const saved = localStorage.getItem("notes")
+    return saved ? JSON.parse(saved) : []
+  })
   const [editingNote, setEditingNote] = useState(null)
+
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(notes))
+  }, [notes])
 
   const addNote = (note) => {
     setNotes([note, ...notes])
