@@ -14,11 +14,15 @@ function App() {
     setNotes([note, ...notes])
   }
 
+  const deleteNote = (id) => {
+    setNotes(notes.filter(note => note.id !== id))
+  }
+
   return (
     <div>
       <h1>Notes App</h1>
       <Header/>
-      <NotesList notes={notes} />
+      <NotesList notes={notes} onDelete={deleteNote} />
       <NoteForm onAddNote={addNote}/>
     </div>
   )
