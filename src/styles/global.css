@@ -1,0 +1,14 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  display: flex;
+  justify-content: center; /* горизонтально */
+  /* align-items: center;     /* веритикально */
+  min-height: 100vh; 
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

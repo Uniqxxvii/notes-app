@@ -1,4 +1,4 @@
-import Note from "./Note"
+import Note from "../Note/Note"
 
 function NotesList({ notes, onDelete, onEdit }) {
     return (

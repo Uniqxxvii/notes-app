@@ -1,4 +1,3 @@
-
 function Note({ id, text, tags, onDelete, onEdit }) {
     return (
         <div>

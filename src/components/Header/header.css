@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search {
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.header button {
+  background: transparent;
+  border: 1px solid #666;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.header button.active {
+  border: 1px solid #fff;
+}
+
+.header button:hover {
+  border-color: #aaa;
+}

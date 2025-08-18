@@ -1,8 +1,8 @@
-import Header from "./components/Header"
-import NotesList from "./components/NotesList"
-import Note from "./components/Note"
-import NoteForm from "./components/NoteForm"
+import Header from "./components/Header/Header"
+import NotesList from "./components/NotesList/NotesList"
+import NoteForm from "./components/NoteForm/NoteForm"
 import { useState, useEffect } from "react"
+import "./App.css"
 
 function App() {
   const [notes, setNotes] = useState(() => {
@@ -39,13 +39,14 @@ function App() {
   })
 
   return (
-    <div>
+    <div className="app">
       <h1>Notes App</h1>
       <Header
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
         notes={notes}
         setSelectedTag={setSelectedTag}
+        selectedTag={selectedTag}
       />
       <NotesList 
         notes={filteredNotes} 
