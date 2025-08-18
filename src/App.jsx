@@ -2,7 +2,7 @@ import Header from "./components/Header"
 import NotesList from "./components/NotesList"
 import Note from "./components/Note"
 import NoteForm from "./components/NoteForm"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 function App() {
   const [notes, setNotes] = useState(() => {
@@ -10,6 +10,8 @@ function App() {
     return saved ? JSON.parse(saved) : []
   })
   const [editingNote, setEditingNote] = useState(null)
+  const [searchQuery, setSearchQuery] = useState("")
+  const [selectedTag, setSelectedTag] = useState(null)
 
   useEffect(() => {
     localStorage.setItem("notes", JSON.stringify(notes))
@@ -30,12 +32,23 @@ function App() {
     setEditingNote(null)
   }
 
+  const filteredNotes = notes.filter(note => {
+    const matchesSearch = note.text.toLowerCase().includes(searchQuery.toLowerCase())
+    const matchesTag = selectedTag ? note.tags.includes(selectedTag) : true
+    return matchesSearch && matchesTag
+  })
+
   return (
     <div>
       <h1>Notes App</h1>
-      <Header/>
+      <Header
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        notes={notes}
+        setSelectedTag={setSelectedTag}
+      />
       <NotesList 
-        notes={notes} 
+        notes={filteredNotes} 
         onDelete={deleteNote}
         onEdit={setEditingNote} 
       />

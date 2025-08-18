@@ -3,7 +3,6 @@ import Note from "./Note"
 function NotesList({ notes, onDelete, onEdit }) {
     return (
         <div>
-            NotesList
             {notes.map(note => (
                 <Note 
                     key={note.id}
