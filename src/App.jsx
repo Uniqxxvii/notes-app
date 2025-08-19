@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Notes App</h1>
+      <h1 className="app-title">Notes App</h1>
       <Header
         searchQuery={searchQuery}
         setSearchQuery={setSearchQuery}
