@@ -21,4 +21,4 @@ npm run dev
 
 # Скриншот
 
-![Notes App Screenshot](./assets/screenshots/screenshot.png)
+![Notes App Screenshot](./public/screenshot.png)
