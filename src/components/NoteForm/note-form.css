@@ -1,0 +1,28 @@
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.note-input,
+.tag-input {
+  padding: 0.5rem;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+.note-button {
+  padding: 0.5rem;
+  border: 1px solid #666;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.note-button:hover {
+  border-color: #aaa;
+}

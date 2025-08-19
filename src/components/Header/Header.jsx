@@ -1,4 +1,4 @@
-import "./Header.css"
+import "./header.css"
 
 function Header({ searchQuery, setSearchQuery, notes, setSelectedTag, selectedTag }) {
     const allTags = [...new Set(notes.flatMap(note => note.tags))]
