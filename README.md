@@ -1,6 +1,8 @@
 # Notes App
+- Минималистичное приложение для заметок с тегами и поиском.  
 
-Минималистичное приложение для заметок с тегами и поиском.  
+# Демо
+- 
 
 # Возможности
 - Добавление заметок
@@ -11,14 +13,13 @@
 - Сохранение в localStorage
 
 # Технологии
-- React + Vite
-- useState / useEffect
+- React 
+- Vite
 - CSS
 
 # Запуск проекта
-npm install
-npm run dev
+- npm install
+- npm run dev
 
 # Скриншот
-
 ![Notes App Screenshot](./public/screenshot.png)
