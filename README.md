@@ -1,5 +1,5 @@
 # Notes App
-- Минималистичное приложение для заметок с тегами и поиском.  
+- Пет проект 
 
 # Демо
 - [Live Demo Netlify](https://uniqxxvii-notesapp.netlify.app/)
